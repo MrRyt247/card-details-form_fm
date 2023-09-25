@@ -77,6 +77,12 @@ body {
     letter-spacing: .3dvw;
 }
 
+.card_front .num span:nth-child(4),
+.card_front .num span:nth-child(8),
+.card_front .num span:nth-child(12) {
+    margin-right: 3px;
+}
+
 .details {
     width: 100%;
     display: flex;
@@ -93,7 +99,11 @@ body {
 .details .exp_date {
     width: fit-content;
     display: flex;
-    letter-spacing: .1dvw;
+    gap: .3dvw;
+}
+
+.details .exp_date .month, .details .exp_date .year {
+   display: flex;
 }
 
 .card_back {
@@ -109,12 +119,13 @@ body {
     box-shadow: .5vw 3vw 30px #0002;
 }
 
-.card_back > span {
+.card_back #cvc {
     position: relative;
-    top: 40%;
+    top: 45%;
+    bottom: 35%;
     left: 80%;
+    transform: translateY(-50%);
     font-size: 1dvw;
-    letter-spacing: .1vw;
 }
 
 .stack {
