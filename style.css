@@ -3,6 +3,7 @@
     --lightGrayishViolet: hsl(270, 3%, 87%);
     --darkGrayishViolet: hsl(279, 6%, 55%);
     --veryDarkViolet: hsl(278, 68%, 11%);
+    --red: hsl(0, 100%, 66%);
 }
 
 * {
@@ -33,6 +34,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 10.5dvw;
+    user-select: none;
 }
 
 .card {
@@ -80,7 +82,7 @@ body {
 .card_front .num span:nth-child(4),
 .card_front .num span:nth-child(8),
 .card_front .num span:nth-child(12) {
-    margin-right: 3px;
+    margin-right: .9dvw;
 }
 
 .details {
@@ -99,11 +101,12 @@ body {
 .details .exp_date {
     width: fit-content;
     display: flex;
-    gap: .3dvw;
+
 }
 
 .details .exp_date .month, .details .exp_date .year {
    display: flex;
+   letter-spacing: .1vw;
 }
 
 .card_back {
@@ -121,11 +124,12 @@ body {
 
 .card_back #cvc {
     position: relative;
-    top: 45%;
-    bottom: 35%;
+    top: 49%;
     left: 80%;
+    display: flex;
     transform: translateY(-50%);
     font-size: 1dvw;
+    letter-spacing: .1vw;
 }
 
 .stack {
@@ -154,13 +158,19 @@ input {
     height: 35px;
     border: solid 1px var(--lightGrayishViolet);
     border-radius: 5px;
-    margin-top: 5px;
-    padding-left: 15px;
+    margin: 5px 0;
+    padding-left: 17px;
     width: 100%;
     font-family: 'Space Grotesk', serif;
     font-weight: 600;
     transition: border-color 80ms ease-in;
     outline: transparent;
+}
+
+.item p {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--red);
 }
 
 input[minlength="2"] {
@@ -176,33 +186,60 @@ input[minlength="2"] {
     width: 65%;
 }
 
-input[type="submit"], button {
-    border: solid 1px transparent;
-    background-color: var(--veryDarkViolet);
-    color: var(--white);
-    border-radius: 5px;
-    height: 40px;
-    width: 100%;
-    margin-top: 1rem;
-}
-
 input:hover, input:focus {
     cursor: pointer;
     border-color: hsl(278, 94%, 30%) hsl(249, 99%, 64%);
 }
 
+#form_btn, button {
+    border: solid 1px transparent;
+    background-color: var(--veryDarkViolet);
+    color: var(--lightGrayishViolet);
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    margin-top: 1rem;
+    font-family: 'Space Grotesk', serif;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    outline: transparent;
+}
+
+#form_btn:active, button:active {
+    transform: scale(.98);
+    filter: brightness(125%);
+}
+
 .gratitude {
-    grid-area: 1 / 1/ 4 / 2;
-    display: flex;
+    width: min(300px, 100% - 2rem);
+    min-width: 300px;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    row-gap: 15px;
     background-color: var(--white);
-    display: none;
+    grid-area: 1 / 1/ 4 / 2;
 }
 
 .gratitude > img {
     width: 60px;
+    margin-bottom: 10px;
+}
+
+.gratitude > h2 {
+    text-transform: uppercase;
+    letter-spacing: .3dvw;
+    color: var(--veryDarkViolet);
+}
+
+.gratitude > p {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--darkGrayishViolet);
+    margin-bottom: 5px;
 }
 
 .attribution {
