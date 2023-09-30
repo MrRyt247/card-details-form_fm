@@ -11,8 +11,9 @@
 }
 
 body {
-    height: 100dvh;
+    height: 100%;
     min-height: 320px;
+    width: 100%;
     font-family: 'Space Grotesk', serif;
     background-image: url("images/bg-main-desktop.png");
     background-size: 37% 100vh;
@@ -21,7 +22,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    overflow: hidden auto;
+    overflow: hidden;
 }
 
 .wrapper {
@@ -205,7 +206,6 @@ input:hover, input:focus {
     padding: 0;
     font-family: 'Space Grotesk', serif;
     font-weight: 600;
-
     cursor: pointer;
 }
 
@@ -264,16 +264,22 @@ input:hover, input:focus {
 }
 
 @media screen and (max-width: 430px) {
+    * {
+        width: fit-content;
+    }
+
     body {
         height: 100vh;
         width: 100%;
         background-image: url("images/bg-main-mobile.png");
         background-size: 100% 14.5rem;
+        overflow: hidden auto;
         justify-content: space-between;
     }
 
     .wrapper {
         width: 90%;
+        height: 90%;
         flex-direction: column;
         justify-content: space-between;
         gap: 0;
@@ -283,7 +289,7 @@ input:hover, input:focus {
         width: 100%;
         height: min-content;
         flex-direction: column-reverse;
-        padding: 2rem 0 7rem 0;
+        padding: 2rem 0 8rem 0;
         gap: 0;
     }
 
@@ -356,7 +362,6 @@ input:hover, input:focus {
         position: relative;
         top: 49.5%;
         left: 78%;
-
         font-size: .7rem;
         letter-spacing: 1px;
     }
@@ -367,8 +372,12 @@ input:hover, input:focus {
         place-items: unset;
     }
 
+    form {
+        align-items: stretch;
+    }
+
     .item {
-        height: 70px;
+        height: 4.3rem;
     }
     
     label {
@@ -378,14 +387,32 @@ input:hover, input:focus {
     }
     
     input {
-        height: 35px;
+        height: 38px;
         padding-left: 10px;
-        width: calc(100% - 14px);
+        width: 100%;
     }
     
     .item p {
         font-size: 11px;
         font-weight: 600;
         color: var(--red);
+    }
+
+    #form_btn, button {
+        height: 42px;
+    }
+}
+
+@media screen and (max-width: 430px) and (min-height: 720px) {
+    body {
+        background-size: 100% 33dvh;
+    }
+
+    .wrapper {
+        height: unset;
+    }
+
+    .card {
+        padding: 5dvh 0 20dvh 0;
     }
 }
