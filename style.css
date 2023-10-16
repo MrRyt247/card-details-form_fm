@@ -11,26 +11,28 @@
 }
 
 body {
-    height: 100%;
+    height: 100vh;
     min-height: 320px;
-    width: 100%;
+    width: 100vw;
     font-family: 'Space Grotesk', serif;
     background-image: url("images/bg-main-desktop.png");
     background-size: 37% 100vh;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 
 .wrapper {
-    width: fit-content;
+    margin-block: auto;
+    margin-inline: auto;
+    height: min-content;
+    width: min-content;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10rem;
+    gap: 10.5dvw;
     -webkit-user-select: none;
     user-select: none;
 }
@@ -62,7 +64,7 @@ body {
 }
 
 .card_front .card_num {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     width: max-content;
     position: relative;
     bottom: 1.6rem;
@@ -72,13 +74,13 @@ body {
 
 .card_front .num {
     display: flex;
-    letter-spacing: .2rem;
+    letter-spacing: .15rem;
 }
 
 .card_front .num span:nth-child(4),
 .card_front .num span:nth-child(8),
 .card_front .num span:nth-child(12) {
-    margin-right: .8rem;
+    margin-right: .5rem;
 }
 
 .details {
@@ -181,6 +183,10 @@ input[minlength="2"] {
     width: 30%;
 }
 
+::placeholder {
+    color: var(--lightGrayishViolet);
+}
+
 .item:nth-child(3) {
     display: flex;
     justify-content: space-between;
@@ -214,30 +220,29 @@ input:hover, input:focus {
     filter: brightness(125%);
 }
 
-.gratitude {
+.alert {
     width: min(300px, 100% - 2rem);
     min-width: 300px;
     display: none;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     row-gap: 15px;
     background-color: var(--white);
     grid-area: 1 / 1/ 4 / 2;
 }
 
-.gratitude > img {
+.alert > img {
     width: 60px;
     margin-bottom: 10px;
 }
 
-.gratitude > h2 {
+.alert > h2 {
     text-transform: uppercase;
     letter-spacing: .2rem;
     color: var(--veryDarkViolet);
 }
 
-.gratitude > p {
+.alert > p {
     font-size: 14px;
     font-weight: 600;
     color: var(--darkGrayishViolet);
@@ -248,7 +253,7 @@ input:hover, input:focus {
     font-family: monospace, 'Courier New';
     font-size: 11px;
     font-weight: 700;
-    text-align: center;
+    margin-inline: auto;
     -webkit-user-select: none;
     user-select: none;
 }
@@ -270,7 +275,7 @@ input:hover, input:focus {
 
     body {
         height: 100vh;
-        width: 100%;
+        width: 100vw;
         background-image: url("images/bg-main-mobile.png");
         background-size: 100% 14.5rem;
         overflow: hidden auto;
@@ -283,6 +288,7 @@ input:hover, input:focus {
         flex-direction: column;
         justify-content: space-between;
         gap: 0;
+        margin-block-start: unset;
     }
 
     .card {
@@ -378,6 +384,7 @@ input:hover, input:focus {
 
     .item {
         height: 4.3rem;
+        width: 100%;
     }
     
     label {
@@ -389,7 +396,7 @@ input:hover, input:focus {
     input {
         height: 38px;
         padding-left: 10px;
-        width: 100%;
+        width: calc(100% - 13px);
     }
     
     .item p {
@@ -400,6 +407,11 @@ input:hover, input:focus {
 
     #form_btn, button {
         height: 42px;
+    }
+
+    .alert {
+        width: 90vw;
+        margin-inline: auto;
     }
 }
 
