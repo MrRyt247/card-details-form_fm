@@ -1,6 +1,6 @@
 const formName = document.getElementById("form_name");
 const form = document.getElementsByTagName("form")[0];
-const complete = document.getElementsByClassName("gratitude")[0];
+const complete = document.getElementsByClassName("alert")[0];
 
 const formNumber = document.getElementById("form_num");
 const formMonth = document.getElementById("form_month");
@@ -124,6 +124,9 @@ function authenticate() {
     b = 0;
   } else if (isNaN(formNumber.value)) {
     logNumber.innerText = "Wrong format, numbers only";
+    formNumber.style.borderColor = "red";
+  } else if (formNumber.value.length !== 16) {
+    logNumber.innerText = "Must be 16 digits";
     formNumber.style.borderColor = "red";
   } else {
     restore(formNumber, logNumber);
