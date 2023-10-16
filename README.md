@@ -37,8 +37,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/MrRyt247/card-details-form_fm.git](https://github.com/MrRyt247/card-details-form_fm.git)
-- Live Site URL: [https://mrryt247.github.io/card-details-form_fm](https://mrryt247.github.io/card-details-form_fm/)
+- Solution URL: [https://github.com/MrRyt247/responsive-debit-form_fm.git](https://github.com/MrRyt247/responsive-debit-form_fm.git)
+- Live Site URL: [https://mrryt247.github.io/responsive-debit-form_fm](https://mrryt247.github.io/responsive-debit-form_fm/)
 
 ## My process
 
