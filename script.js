@@ -168,6 +168,12 @@ function authenticate() {
   }
 }
 
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    authenticate();
+  }
+});
+
 const reset = () => {
   window.location = window.location.href;
 };
